@@ -1,0 +1,20 @@
+/**
+ * @param {number[][]} coordinates
+ * @return {boolean}
+ */
+var checkStraightLine = function(coordinates) {
+    var check = true;
+    var a = (coordinates[1][1]-coordinates[0][1])/(coordinates[1][0]-coordinates[0][0]);
+    var b = coordinates[0][1] - a*(coordinates[0][0]);
+    
+   for(var i =0;i<coordinates.length;i++){
+    if((a*coordinates[i][0]+b) === (coordinates[i][1])){
+        check = true;
+   }
+       else{
+       check = false;
+           break;
+   }
+       };
+       return check;
+}
